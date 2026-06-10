@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+<main class="container result-page">
+    <section class="result-card">
+        <p class="tag">Prediction Result</p>
+        <h1>Recommended Crop: <span>{{ record.crop }}</span></h1>
+        <p class="result-tip">{{ record.info.tip }}</p>
+
+        <div class="result-grid">
+            <div>
+                <h3>Season</h3>
+                <p>{{ record.info.season }}</p>
+            </div>
+            <div>
+                <h3>Water Requirement</h3>
+                <p>{{ record.info.water }}</p>
+            </div>
+            <div>
+                <h3>Location</h3>
+                <p>{{ record.city }}</p>
+            </div>
+        </div>
+
+        <h2>Input Values</h2>
+        <div class="input-summary">
+            <p><b>N:</b> {{ record.inputs.N }}</p>
+            <p><b>P:</b> {{ record.inputs.P }}</p>
+            <p><b>K:</b> {{ record.inputs.K }}</p>
+            <p><b>Temperature:</b> {{ record.inputs.temperature }} °C</p>
+            <p><b>Humidity:</b> {{ record.inputs.humidity }}%</p>
+            <p><b>pH:</b> {{ record.inputs.ph }}</p>
+            <p><b>Rainfall:</b> {{ record.inputs.rainfall }} mm</p>
+        </div>
+
+        <div class="hero-buttons">
+            <a href="{{ url_for('home') }}" class="btn primary">Predict Again</a>
+            <a href="{{ url_for('history') }}" class="btn secondary">View History</a>
+        </div>
+    </section>
+</main>
+{% endblock %}

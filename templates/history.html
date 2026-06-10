@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+<main class="container">
+    <section class="section-title">
+        <p class="tag">Saved Records</p>
+        <h1>Prediction History</h1>
+        <p class="muted">The project stores recent predictions in a simple JSON file.</p>
+    </section>
+
+    {% if history %}
+        <div class="history-list">
+            {% for item in history %}
+            <div class="history-card">
+                <div>
+                    <h3>{{ item.crop }}</h3>
+                    <p>{{ item.info.tip }}</p>
+                    <small>{{ item.date }} | {{ item.city }}</small>
+                </div>
+                <div class="mini-values">
+                    <span>N: {{ item.inputs.N }}</span>
+                    <span>P: {{ item.inputs.P }}</span>
+                    <span>K: {{ item.inputs.K }}</span>
+                    <span>pH: {{ item.inputs.ph }}</span>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="card">
+            <p>No predictions saved yet.</p>
+            <a href="{{ url_for('home') }}" class="btn primary">Make First Prediction</a>
+        </div>
+    {% endif %}
+</main>
+{% endblock %}

@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+{% block content %}
+<header class="hero">
+    <div class="hero-text">
+        <p class="tag">AI Based Agriculture Technology</p>
+        <h1>Recommend the Best Crop using Soil and Weather Data</h1>
+        <p>
+            Enter soil nutrients and weather details to get a suitable crop suggestion.
+            This version is simple enough for a first-year mini project and viva.
+        </p>
+        <div class="hero-buttons">
+            <a href="#recommend-form" class="btn primary">Start Prediction</a>
+            <a href="{{ url_for('history') }}" class="btn secondary">View History</a>
+        </div>
+    </div>
+    <div class="hero-card">
+        <h3>Inputs Used</h3>
+        <ul>
+            <li>Nitrogen, Phosphorus, Potassium</li>
+            <li>pH value of soil</li>
+            <li>Temperature and humidity</li>
+            <li>Rainfall</li>
+        </ul>
+    </div>
+</header>
+
+<main class="container">
+    {% if error %}
+    <div class="alert">{{ error }}</div>
+    {% endif %}
+
+    <section class="grid-3">
+        <div class="feature-card">
+            <h3>🌾 Soil Analysis</h3>
+            <p>Uses N, P, K and pH values to understand soil condition.</p>
+        </div>
+        <div class="feature-card">
+            <h3>☁️ Weather Support</h3>
+            <p>Can fetch temperature and humidity from OpenWeatherMap API.</p>
+        </div>
+        <div class="feature-card">
+            <h3>🤖 ML Prediction</h3>
+            <p>Uses a simple KNN model to recommend a suitable crop.</p>
+        </div>
+    </section>
+
+    <section id="recommend-form" class="form-section">
+        <div>
+            <p class="tag">Prediction Form</p>
+            <h2>Enter Farm Details</h2>
+            <p class="muted">
+                If you do not have an API key, manually enter temperature,
+                humidity and rainfall.
+            </p>
+        </div>
+
+        <form method="POST" action="{{ url_for('recommend') }}" class="form-card">
+            <div class="form-row">
+                <div class="input-group">
+                    <label>City / Location</label>
+                    <input type="text" id="city" name="city" placeholder="Example: Bengaluru">
+                </div>
+                <div class="input-group button-align">
+                    <button type="button" class="btn secondary full" onclick="fetchWeather()">
+                        Fetch Weather
+                    </button>
+                </div>
+            </div>
+
+            <p id="weather-message" class="weather-message"></p>
+
+            <div class="form-row">
+                <div class="input-group">
+                    <label>Nitrogen (N)</label>
+                    <input type="number" step="0.01" name="nitrogen" required placeholder="Example: 90">
+                </div>
+                <div class="input-group">
+                    <label>Phosphorus (P)</label>
+                    <input type="number" step="0.01" name="phosphorus" required placeholder="Example: 42">
+                </div>
+                <div class="input-group">
+                    <label>Potassium (K)</label>
+                    <input type="number" step="0.01" name="potassium" required placeholder="Example: 43">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="input-group">
+                    <label>Temperature (°C)</label>
+                    <input type="number" step="0.01" id="temperature" name="temperature" required placeholder="Example: 25">
+                </div>
+                <div class="input-group">
+                    <label>Humidity (%)</label>
+                    <input type="number" step="0.01" id="humidity" name="humidity" required placeholder="Example: 80">
+                </div>
+                <div class="input-group">
+                    <label>Soil pH</label>
+                    <input type="number" step="0.01" name="ph" required placeholder="Example: 6.5">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="input-group">
+                    <label>Rainfall (mm)</label>
+                    <input type="number" step="0.01" id="rainfall" name="rainfall" required placeholder="Example: 200">
+                </div>
+            </div>
+
+            <button type="submit" class="btn primary submit-btn">Recommend Crop</button>
+        </form>
+    </section>
+</main>
+{% endblock %}
