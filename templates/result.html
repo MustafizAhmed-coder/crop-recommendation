@@ -1,41 +1,167 @@
 {% extends "base.html" %}
+
 {% block content %}
+
 <main class="container result-page">
+
     <section class="result-card">
-        <p class="tag">Prediction Result</p>
-        <h1>Recommended Crop: <span>{{ record.crop }}</span></h1>
-        <p class="result-tip">{{ record.info.tip }}</p>
+
+        <p class="tag">AI Prediction Result</p>
+
+        <h1>
+            Recommended Crop:
+            <span>{{ record.crop }}</span>
+        </h1>
+
+        <p class="confidence">
+            AI Confidence: {{ record.confidence }}%
+        </p>
+
+        {% if record.warning %}
+        <div class="alert">
+            {{ record.warning }}
+        </div>
+        {% endif %}
+
+        <p class="result-tip">
+            {{ record.info.tip }}
+        </p>
 
         <div class="result-grid">
+
             <div>
                 <h3>Season</h3>
                 <p>{{ record.info.season }}</p>
             </div>
+
             <div>
                 <h3>Water Requirement</h3>
                 <p>{{ record.info.water }}</p>
             </div>
+
             <div>
                 <h3>Location</h3>
                 <p>{{ record.city }}</p>
             </div>
+
+        </div>
+
+        <h2>Top 3 AI Recommendations</h2>
+
+        <div class="recommendation-list">
+
+            {% for item in record.top_recommendations %}
+
+            <div class="recommendation-item">
+
+                <h3>
+                    {{ loop.index }}. {{ item.crop }}
+                </h3>
+
+                <p>
+                    Match Confidence: {{ item.confidence }}%
+                </p>
+
+                <div class="confidence-bar">
+
+                    <div
+                        class="confidence-fill"
+                        data-confidence="{{ item.confidence }}"
+                    ></div>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
         </div>
 
         <h2>Input Values</h2>
+
         <div class="input-summary">
-            <p><b>N:</b> {{ record.inputs.N }}</p>
-            <p><b>P:</b> {{ record.inputs.P }}</p>
-            <p><b>K:</b> {{ record.inputs.K }}</p>
-            <p><b>Temperature:</b> {{ record.inputs.temperature }} °C</p>
-            <p><b>Humidity:</b> {{ record.inputs.humidity }}%</p>
-            <p><b>pH:</b> {{ record.inputs.ph }}</p>
-            <p><b>Rainfall:</b> {{ record.inputs.rainfall }} mm</p>
+
+            <p>
+                <b>Nitrogen:</b>
+                {{ record.inputs.N }}
+            </p>
+
+            <p>
+                <b>Phosphorus:</b>
+                {{ record.inputs.P }}
+            </p>
+
+            <p>
+                <b>Potassium:</b>
+                {{ record.inputs.K }}
+            </p>
+
+            <p>
+                <b>Temperature:</b>
+                {{ record.inputs.temperature }} °C
+            </p>
+
+            <p>
+                <b>Humidity:</b>
+                {{ record.inputs.humidity }}%
+            </p>
+
+            <p>
+                <b>Soil pH:</b>
+                {{ record.inputs.ph }}
+            </p>
+
+            <p>
+                <b>Rainfall:</b>
+                {{ record.inputs.rainfall }} mm
+            </p>
+
         </div>
 
         <div class="hero-buttons">
-            <a href="{{ url_for('home') }}" class="btn primary">Predict Again</a>
-            <a href="{{ url_for('history') }}" class="btn secondary">View History</a>
+
+            <a
+                href="{{ url_for('home') }}"
+                class="btn primary"
+            >
+                Predict Again
+            </a>
+
+            <a
+                href="{{ url_for('history') }}"
+                class="btn secondary"
+            >
+                View History
+            </a>
+
         </div>
+
     </section>
+
 </main>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const confidenceBars =
+            document.querySelectorAll(".confidence-fill");
+
+        confidenceBars.forEach(function (bar) {
+            let confidence = Number(
+                bar.dataset.confidence
+            );
+
+            if (Number.isNaN(confidence)) {
+                confidence = 0;
+            }
+
+            confidence = Math.max(
+                0,
+                Math.min(confidence, 100)
+            );
+
+            bar.style.width = confidence + "%";
+        });
+    });
+</script>
+
 {% endblock %}

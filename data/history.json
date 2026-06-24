@@ -1,5 +1,390 @@
 [
   {
+    "date": "15-06-2026 07:54 PM",
+    "city": "Bengaluru",
+    "inputs": {
+      "N": 25.0,
+      "P": 12.0,
+      "K": 20.0,
+      "temperature": 27.68,
+      "humidity": 57.0,
+      "ph": 11.0,
+      "rainfall": 0.0
+    },
+    "crop": "Chickpea",
+    "confidence": 66.67,
+    "top_recommendations": [
+      {
+        "crop": "Chickpea",
+        "confidence": 66.67
+      },
+      {
+        "crop": "Mungbean",
+        "confidence": 33.33
+      },
+      {
+        "crop": "Rice",
+        "confidence": 0.0
+      }
+    ],
+    "warning": null,
+    "info": {
+      "season": "Rabi",
+      "water": "Low",
+      "tip": "Chickpea grows better in dry and cool conditions."
+    }
+  },
+  {
+    "date": "15-06-2026 07:53 PM",
+    "city": "bommanahalli",
+    "inputs": {
+      "N": 1.0,
+      "P": 0.0,
+      "K": 0.0,
+      "temperature": 27.41,
+      "humidity": 62.0,
+      "ph": 2.0,
+      "rainfall": 0.0
+    },
+    "crop": "Papaya",
+    "confidence": 33.33,
+    "top_recommendations": [
+      {
+        "crop": "Papaya",
+        "confidence": 33.33
+      },
+      {
+        "crop": "Orange",
+        "confidence": 33.33
+      },
+      {
+        "crop": "Blackgram",
+        "confidence": 33.33
+      }
+    ],
+    "warning": "The entered conditions do not strongly match the training dataset. Verify the soil and weather values before making a farming decision.",
+    "info": {
+      "season": "Perennial",
+      "water": "Medium to High",
+      "tip": "Papaya needs warm climate and good soil drainage."
+    }
+  },
+  {
+    "date": "15-06-2026 07:53 PM",
+    "city": "Bengaluru",
+    "inputs": {
+      "N": 53232.0,
+      "P": 549.0,
+      "K": 465.0,
+      "temperature": 27.68,
+      "humidity": 57.0,
+      "ph": 7.0,
+      "rainfall": 0.0
+    },
+    "crop": "Cotton",
+    "confidence": 100.0,
+    "top_recommendations": [
+      {
+        "crop": "Cotton",
+        "confidence": 100.0
+      },
+      {
+        "crop": "Pigeonpeas",
+        "confidence": 0.0
+      },
+      {
+        "crop": "Papaya",
+        "confidence": 0.0
+      }
+    ],
+    "warning": null,
+    "info": {
+      "season": "Kharif",
+      "water": "Medium",
+      "tip": "Cotton grows best in warm climate with moderate rainfall."
+    }
+  },
+  {
+    "date": "15-06-2026 07:53 PM",
+    "city": "Bengaluru",
+    "inputs": {
+      "N": 5323.0,
+      "P": 549.0,
+      "K": 465.0,
+      "temperature": 27.68,
+      "humidity": 57.0,
+      "ph": 7.0,
+      "rainfall": 0.0
+    },
+    "crop": "Cotton",
+    "confidence": 100.0,
+    "top_recommendations": [
+      {
+        "crop": "Cotton",
+        "confidence": 100.0
+      },
+      {
+        "crop": "Pigeonpeas",
+        "confidence": 0.0
+      },
+      {
+        "crop": "Papaya",
+        "confidence": 0.0
+      }
+    ],
+    "warning": null,
+    "info": {
+      "season": "Kharif",
+      "water": "Medium",
+      "tip": "Cotton grows best in warm climate with moderate rainfall."
+    }
+  },
+  {
+    "date": "15-06-2026 07:52 PM",
+    "city": "Bengaluru",
+    "inputs": {
+      "N": 532.0,
+      "P": 549.0,
+      "K": 465.0,
+      "temperature": 27.68,
+      "humidity": 57.0,
+      "ph": 7.0,
+      "rainfall": 0.0
+    },
+    "crop": "Grapes",
+    "confidence": 66.67,
+    "top_recommendations": [
+      {
+        "crop": "Grapes",
+        "confidence": 66.67
+      },
+      {
+        "crop": "Apple",
+        "confidence": 33.33
+      },
+      {
+        "crop": "Papaya",
+        "confidence": 0.0
+      }
+    ],
+    "warning": null,
+    "info": {
+      "season": "Perennial",
+      "water": "Medium",
+      "tip": "Grapes need dry weather during fruit development."
+    }
+  },
+  {
+    "date": "15-06-2026 03:47 PM",
+    "city": "Bengaluru",
+    "inputs": {
+      "N": 92.0,
+      "P": 42.0,
+      "K": 41.0,
+      "temperature": 29.43,
+      "humidity": 53.0,
+      "ph": 5.5,
+      "rainfall": 0.0
+    },
+    "crop": "Cotton",
+    "confidence": 66.67,
+    "top_recommendations": [
+      {
+        "crop": "Cotton",
+        "confidence": 66.67
+      },
+      {
+        "crop": "Coffee",
+        "confidence": 33.33
+      },
+      {
+        "crop": "Papaya",
+        "confidence": 0.0
+      }
+    ],
+    "warning": null,
+    "info": {
+      "season": "Kharif",
+      "water": "Medium",
+      "tip": "Cotton grows best in warm climate with moderate rainfall."
+    }
+  },
+  {
+    "date": "15-06-2026 03:45 PM",
+    "city": "Shimoga",
+    "inputs": {
+      "N": 92.0,
+      "P": 41.0,
+      "K": 40.0,
+      "temperature": 28.62,
+      "humidity": 62.0,
+      "ph": 7.0,
+      "rainfall": 0.0
+    },
+    "crop": "Coffee",
+    "confidence": 100.0,
+    "top_recommendations": [
+      {
+        "crop": "Coffee",
+        "confidence": 100.0
+      },
+      {
+        "crop": "Pigeonpeas",
+        "confidence": 0.0
+      },
+      {
+        "crop": "Papaya",
+        "confidence": 0.0
+      }
+    ],
+    "warning": null,
+    "info": {
+      "season": "Perennial",
+      "water": "Medium",
+      "tip": "Coffee grows well in warm climate with shade and moderate rainfall."
+    }
+  },
+  {
+    "date": "15-06-2026 11:00 AM",
+    "city": "Shimoga",
+    "inputs": {
+      "N": 92.0,
+      "P": 41.0,
+      "K": 40.0,
+      "temperature": 28.62,
+      "humidity": 62.0,
+      "ph": 7.0,
+      "rainfall": 0.0
+    },
+    "crop": "Coffee",
+    "confidence": 100.0,
+    "top_recommendations": [
+      {
+        "crop": "Coffee",
+        "confidence": 100.0
+      },
+      {
+        "crop": "Pigeonpeas",
+        "confidence": 0.0
+      },
+      {
+        "crop": "Papaya",
+        "confidence": 0.0
+      }
+    ],
+    "warning": null,
+    "info": {
+      "season": "Perennial",
+      "water": "Medium",
+      "tip": "Coffee grows well in warm climate with shade and moderate rainfall."
+    }
+  },
+  {
+    "date": "15-06-2026 10:24 AM",
+    "city": "shikaripur",
+    "inputs": {
+      "N": 10.0,
+      "P": 25.0,
+      "K": 85.0,
+      "temperature": 29.01,
+      "humidity": 58.0,
+      "ph": 9.0,
+      "rainfall": 0.0
+    },
+    "crop": "Mungbean",
+    "confidence": 66.67,
+    "top_recommendations": [
+      {
+        "crop": "Mungbean",
+        "confidence": 66.67
+      },
+      {
+        "crop": "Chickpea",
+        "confidence": 33.33
+      },
+      {
+        "crop": "Rice",
+        "confidence": 0.0
+      }
+    ],
+    "warning": null,
+    "info": {
+      "season": "Kharif / Summer",
+      "water": "Low to Medium",
+      "tip": "Mungbean is suitable for warm climate and short crop duration."
+    }
+  },
+  {
+    "date": "15-06-2026 10:22 AM",
+    "city": "bommanahalli",
+    "inputs": {
+      "N": 10.0,
+      "P": 25.0,
+      "K": 85.0,
+      "temperature": 26.89,
+      "humidity": 69.0,
+      "ph": 9.0,
+      "rainfall": 0.0
+    },
+    "crop": "Mungbean",
+    "confidence": 66.67,
+    "top_recommendations": [
+      {
+        "crop": "Mungbean",
+        "confidence": 66.67
+      },
+      {
+        "crop": "Chickpea",
+        "confidence": 33.33
+      },
+      {
+        "crop": "Rice",
+        "confidence": 0.0
+      }
+    ],
+    "warning": null,
+    "info": {
+      "season": "Kharif / Summer",
+      "water": "Low to Medium",
+      "tip": "Mungbean is suitable for warm climate and short crop duration."
+    }
+  },
+  {
+    "date": "15-06-2026 10:19 AM",
+    "city": "Bengaluru",
+    "inputs": {
+      "N": 8.0,
+      "P": 8.0,
+      "K": 45.0,
+      "temperature": 27.1,
+      "humidity": 69.0,
+      "ph": 6.0,
+      "rainfall": 0.0
+    },
+    "crop": "Mungbean",
+    "confidence": 33.33,
+    "top_recommendations": [
+      {
+        "crop": "Mungbean",
+        "confidence": 33.33
+      },
+      {
+        "crop": "Coffee",
+        "confidence": 33.33
+      },
+      {
+        "crop": "Maize",
+        "confidence": 33.33
+      }
+    ],
+    "warning": "The entered conditions do not strongly match the training dataset. Verify the soil and weather values before making a farming decision.",
+    "info": {
+      "season": "Kharif / Summer",
+      "water": "Low to Medium",
+      "tip": "Mungbean is suitable for warm climate and short crop duration."
+    }
+  },
+  {
     "date": "01-06-2026 12:02 PM",
     "city": "bengaluru",
     "inputs": {
